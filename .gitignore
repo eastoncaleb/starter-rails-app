@@ -32,3 +32,8 @@
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+
+# ignore IDE specific files/directories
+/.nova/
+
+**/.DS_Store
