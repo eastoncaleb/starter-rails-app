@@ -1,0 +1,25 @@
+<% color ||= 'blue' %>
+
+<div id="notice" class="z-2 fixed-top w-50 text-center mx-auto">
+	<% if notice.present? %>
+		<div class="mx-auto md:w-2/3 w-full flex">
+			<p class="mx-auto py-2 px-3 font-semibold bg-<%= color %>-800 border-<%= color %>-600 border-2 text-white rounded-lg inline-block opacity-80">
+			<% if notice.kind_of?(Array) %>
+				<% notice.each do |e| %>
+					- <%= e %><br />
+				<% end %>
+			<% else %>
+				<%= notice %>
+			<% end %>
+			</p>
+		</div>
+	<% elsif flash.any? %>
+		<% flash.each do |type, message| %>
+			<div class="mx-auto md:w-2/3 w-full flex">
+				<p class="mx-auto py-2 px-3 font-semibold bg-<%= color %>-800 border-<%= color %>-600 border-2 text-white rounded-lg inline-block opacity-80">
+					<%= message %>
+				</p>
+			</div>
+		<% end %>
+	<% end %>
+</div>

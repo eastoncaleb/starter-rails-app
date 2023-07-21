@@ -12,8 +12,24 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
+    <div class="flex justify-around bg-gray-100 w-full shadow-md items-center mb-4">
+      <%= link_to root_path do %>
+        <h1 class="text-2xl xl:text-4xl p-4 font-bold text-gray-700">Sample App</h1>
+      <% end %>
+      <div class="mx-8 flex font-bold text-gray-900">
+        <% if user_signed_in? %>
+          <%= button_to "logout", destroy_user_session_path, method: :delete, class: "ml-4 mr-2 hover:text-gray-600 text-gray-700" %>
+          <% else %>
+          <%= link_to "log in", user_session_path, class: "ml-4 mr-2 hover:text-gray-600 text-gray-700" %>
+        <% end %>
+      </div>
+    </div>
+    
+    <main class="flex justify-center">
+      <div class="p-4 relative">
+        <%= render 'shared/notices' %>
+        <%= yield %>
+      </div>
     </main>
   </body>
 </html>
