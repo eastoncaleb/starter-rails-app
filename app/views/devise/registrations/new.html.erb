@@ -13,9 +13,9 @@
     <div class="flex">
       <%= f.label :password, class: "text-gray-600" %>
       <% if @minimum_password_length %>
-      <em class="ml-1">(<%= @minimum_password_length %> characters minimum)</em>
+        <em class="ml-1">(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %>
     </div>
-    <% end %>
     <%= f.password_field :password, autocomplete: "new-password", class: "w-full rounded border border-gray-300" %>
   </div>
 
