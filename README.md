@@ -7,14 +7,14 @@ Built using:
 - Ruby: 3.2.2
 - Rails: 7.0.6
 
-* Pre-installed and configured:
+Pre-installed and configured:
 - Devise
 - Tailwind
 - Rspec/Capybara
 - Font Awesome
 - FactoryBot
 
-* Get started:
+Get started:
 ```
 bundle install
 rails db:create
@@ -22,5 +22,6 @@ rails db:migrate
 bin/dev
 ```
 
-* How to run the test suite
-`bundle exec rspec`
+How to run the test suite:
+
+```bundle exec rspec```
